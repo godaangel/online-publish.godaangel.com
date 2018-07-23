@@ -6,14 +6,6 @@ let Render = require('../libs/render');
 
 let Md5 = require('../libs/md5');
 
-// let File = require('../libs/file');
-// var fs = require('fs');
-// var path = require('path');
-// //设置日志文件目录
-// var logDirectory = path.join(__dirname, '../logs');
-// //确保日志文件目录存在 没有则创建
-// fs.existsSync(logDirectory)||fs.mkdirSync(logDirectory);
-
 router.get('/list', function(req, res, next) {
   let user = new User();
   let getUserList = async function() {
@@ -48,7 +40,6 @@ router.get('/detail/:id', function(req, res, next) {
   }
 
   getUserInfo().catch((err) => {
-    // File.saveFile(`${logDirectory}/error.log`, `${err}`)
   	Render.err(res, err);
   });
 
